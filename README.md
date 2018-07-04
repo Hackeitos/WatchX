@@ -35,7 +35,7 @@ Once you changed the settings to the values you like, you will return to the tim
 
 Stopwatch & Countdown:
 
-Still in time screen, you can press the LS and you will go to the StopWatch/CountDown screen (maybe wit a fast press it wont realize you pressed it). A "S" appears under the battery value if it is in stopwatch mode and a "C" if it is in countdown mode. Now, in this screen, if you press the URS the SW/CD will reset and pressing the LRS will start the SW/CD (the screen wont update until you release the button, but it starts counting at the moment you press it). Now, how to switch between SW and CD? Simple, in this screen if you press both the LS and URS, you will access to the CD settings where, if you set all values to 0, it will become a stopwatch (default). If in CD mode, when it reaches 0 the leds will blink until you press sny switch (has no sound yet). If in SW mode, while the minutes < 60 it will show mm:ss:(10th of a second), else it will show HH:mm:ss. The countdown wont blink leds if not in countdown screen (TODO), but it will be still counting (stopwatch too).
+Still in time screen, you can press the LS and you will go to the StopWatch/CountDown screen (maybe wit a fast press it wont realize you pressed it). A "S" appears under the battery value if it is in stopwatch mode and a "C" if it is in countdown mode. Now, in this screen, if you press the URS the SW/CD will reset and pressing the LRS will start the SW/CD (the screen wont update until you release the button, but it starts counting at the moment you press it). Now, how to switch between SW and CD? Simple, in this screen if you press both the LS and URS, you will access to the CD settings where, if you set all values to 0, it will become a stopwatch (default). If in CD mode, when it reaches 0 the leds will blink until you press sny switch (has no sound yet). If in SW mode, while the minutes < 60 it will show mm:ss:(10th of a second), else it will show HH:mm:ss. The countdown wont blink leds if not in countdown screen [TODO], but it will be still counting (stopwatch too).
 
 IMPORTANT: The watch wont turn off if compass or stopwatch/contdown are shown for comfort issues. You can change this in line 81 erasing the "&& !timer && !compass".
 
@@ -46,3 +46,5 @@ You are completely free to improve(I say improve becouse it is impossible to wor
 If you saw this and now your eyes are bleeding, I'm spanish and my english level is low, so you can ask me for new ones.
 
 Thanks so much to the WatchX team to make this awesome watch possible.
+
+Currently working on make the battery not draining so fast.
