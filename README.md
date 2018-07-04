@@ -47,4 +47,7 @@ If you saw this and now your eyes are bleeding, I'm spanish and my english level
 
 Thanks so much to the WatchX team to make this awesome watch possible.
 
-Currently working on make the battery not draining so fast.
+# TODOs:
+  - Battery gets over so fast, improve power saving
+  - Countdown doesn't blink when on time screen, fix that
+  - Make the charging indicator appear
