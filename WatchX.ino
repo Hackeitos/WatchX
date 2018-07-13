@@ -244,7 +244,7 @@ void settings()
   changed = false;
   DateTime newTime(settings2("Year", now.year(), 1, 2100, 1980),
                    settings2("Month", now.month(), 1, 12, 1),
-                   settings2("Day", now.day(), 1, 1, 7),
+                   settings2("Day", now.day(), 1, 31, 1),
                    settings2("Hour", now.hour(), 1, 23, 0),
                    settings2("Minute", now.minute(), 1, 59, 0),
                    settings2("Second", now.second(), 1, 59, 0));
