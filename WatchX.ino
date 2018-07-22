@@ -27,6 +27,9 @@
 #define MPU6050_ADDRESS 0x69
 #endif
 
+#define USBDEVICE UDADDR & _BV(ADDEN)
+unsigned char DEVICESTATE;
+
 RTC_DS3231 rtc;
 MPU6050 mpu;
 StopWatch sw;
@@ -534,7 +537,12 @@ void printTime(char h, char m, char s)
   }
   display.setCursor(0, 2);
   display.print(batt, DEC);
-  display.println('%');
+  DEVICESTATE = (USBDEVICE) | ((((~PINB) & B11010000) + B00010000) >> 5);
+  if (DEVICESTATE <= 5) {
+    display.print('%');
+  } else {
+    if (batt < 10) drawThunder(7, 2); else if (batt < 100) drawThunder(13, 2); else drawThunder(19, 2);
+  }
   char len = 4;
   if (now.second() % 5 == 0 || updateBandT) temp = bme.readTemperature() + tmp;
   updateBandT = false;
@@ -660,3 +668,13 @@ void writeByte(uint8_t address, uint8_t subAddress, uint8_t data)
 
 }
 #endif
+
+void drawThunder(char x, char y) {
+  display.drawLine(x, y + 3, x + 5, y + 3, WHITE);
+  display.drawLine(x + 1, y + 2, x + 2, y + 2, WHITE);
+  display.drawLine(x + 3, y + 4, x + 4, y + 4, WHITE);
+  display.drawPixel(x + 3, y, WHITE);
+  display.drawPixel(x + 2, y + 6, WHITE);
+  display.drawPixel(x + 2, y + 1, WHITE);
+  display.drawPixel(x + 3, y + 5, WHITE);
+}
