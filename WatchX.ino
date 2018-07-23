@@ -352,7 +352,7 @@ void settings()
   bool dim = false;
   -----------------------------------------------------------------------------*/
 bool goFast = false;
-char del = 0;
+unsigned short del = 0;
 float settings2(char text[], float val, float step, char mx, char mn, char mode)
 {
   while (true)
